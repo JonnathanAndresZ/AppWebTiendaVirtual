@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+      
+    <ui:composition template="/WEB-INF/include/plantillaVendedor.xhtml">
+      
+	    <ui:define name="head">
+			<title>Agregar Producto</title>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+	   	</ui:define>
+		
+		<ui:define name="body">
+			<section id="gtco-our-team" data-section="our-team">
+				<div class="container" align="center">
+					<div>
+						<div>
+        					<div class="panel panel-default form-group text-center mb-4 mt-1">
+        						<div class="panel-heading">
+			    					<h3 class="panel-title" style="color:black">Registro de productos</h3>
+			    				</div>
+				 				<div class="panel-body">
+				    				<h:form role="form" enctype="multipart/form-data">
+				    					<div>
+											<h:message errorStyle="color:red; display:block" for="nombre" />
+										</div>
+					    				<div class="form-group">
+					    					<h:inputText type="text" name="nombre" id="nombre" class="form-control input-sm" pt:placeholder="Nombre del producto" value="#{controladorProductos.producto.nombre}"/>			    					
+					    				</div>
+					    				<div>
+											<h:message errorStyle="color:red; display:block" for="descripcion" />
+										</div>
+					    				<div class="form-group">
+					    					<h:inputText type="text" name="descripcion" id="descripcion" class="form-control input-sm" pt:placeholder="Descripción del producto" value="#{controladorProductos.producto.descripcion}"/>			    					
+					    				</div>
+										<div>
+											<h:message errorStyle="color:red; display:block" for="stock" />
+										</div>
+				    					<div class="form-group">
+				    						<h4 Style="text-align:left">Stock :</h4>
+				    						<h:inputText type="number" name="stock" id="stock" class="form-control input-sm" pt:placeholder="Stock" value="#{controladorProductos.producto.stock}" />
+				    					</div>
+				    					<div class="form-group">
+						    				<p:growl id="messages" showDetail="true"/>
+						    				<h2>Cargar imágenes</h2>
+											<h:inputFile value="#{controladorProductos.uploadedFile1}"  />
+											<br />
+											<h:inputFile value="#{controladorProductos.uploadedFile2}"  />
+											<br />
+											<h:inputFile value="#{controladorProductos.uploadedFile3}"  />
+					    				</div>
+					    				<br />
+					    				<br />
+				    					<h:commandLink
+											action="#{controladorProductos.Guardar()}"
+											class="btn btn-primary">
+											<i class="mdi mdi-content-save"></i>
+												Guardar
+										</h:commandLink>
+				    				</h:form>
+				    				<br />
+				    				<h:form>
+										<h:link
+											outcome="productosVendedor.jsf"
+											class="btn btn-danger">Volver
+										</h:link>
+				    				</h:form>
+				    			</div>
+			    			</div>
+    					</div>
+					</div>
+				</div>
+			</section>	
+		</ui:define>
+		
+		<ui:define name="js">
+			
+			<!-- jQuery -->
+			<script src="resources/js/jquery.min.js"></script>
+			<!-- Waypoints -->
+			<script src="resources/js/jquery.waypoints.min.js"></script>
+			<!-- Stellar -->
+			<script src="resources/js/jquery.stellar.min.js"></script>
+			<!-- Main -->
+			<script src="resources/js/main.js"></script>
+	   	</ui:define>
+
+	</ui:composition>
+	
+</html>

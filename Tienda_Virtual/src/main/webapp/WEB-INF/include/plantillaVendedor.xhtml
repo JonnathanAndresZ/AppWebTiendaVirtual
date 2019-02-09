@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      
+      <h:head>
+	
+			<meta charset="utf-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+			<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+			<meta name="author" content="FreeHTML5.co" />
+		
+		  	<!-- Facebook and Twitter integration -->
+			<meta property="og:title" content="" />
+			<meta property="og:image" content="" />
+			<meta property="og:url" content="" />
+			<meta property="og:site_name" content="" />
+			<meta property="og:description" content="" />
+			<meta name="twitter:title" content="" />
+			<meta name="twitter:image" content="" />
+			<meta name="twitter:url" content="" />
+			<meta name="twitter:card" content="" />
+		
+			<!-- Bootstrap  -->
+			<link rel="stylesheet" href="resources/css/bootstrap.css" />
+			<link rel="stylesheet" href="resources/css/owl.theme.default.min.css" />
+			<!-- Theme style  -->
+			<link rel="stylesheet" href="resources/css/style.css" />
+		
+			
+			
+			<ui:insert name="head"/>
+
+	</h:head>
+      
+    <h:body>
+			#{controladorSesion.verificaSesionVendedor()}
+			<nav class="gtco-nav" role="navigation">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2 col-xs-12">
+							<div id="gtco-logo"><a href="index.jsf">Tienda <em>Virtual</em></a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1 main-nav">
+							<ul>
+								<li><a href="index.jsf" class="external">Inicio</a></li>
+								<li><a href="productosVendedor.jsf" class="external">Productos</a></li>
+								<li><a href="cerrarSesion.jsf" class="external">Cerrar Sesión</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</nav>
+		
+			<ui:insert name="body"/>
+			<footer id="gtco-footer" role="contentinfo">
+				<div class="container">
+					
+					<div class="row copyright">
+						<div class="col-md-12">
+							<p class="pull-left">
+								<small class="block">&copy; 2018 Todos los derechos reservados.</small> 
+								<small class="block">Desarrollado por Jonnathan Andrés</small>
+							</p>
+							<p class="pull-right">
+								<ul class="gtco-social-icons pull-right">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-facebook"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								</ul>
+							</p>
+						</div>
+					</div>
+		
+				</div>
+			</footer>
+		
+			<ui:insert name="js"/>
+	
+		</h:body>
+      
+</html>

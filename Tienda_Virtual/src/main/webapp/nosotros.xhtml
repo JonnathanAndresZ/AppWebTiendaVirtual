@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:o="http://omnifaces.org/ui"
+	  xmlns:of="http://omnifaces.org/functions"
+	  xmlns:p="http://primefaces.org/ui">
+      
+    <ui:composition template="/WEB-INF/include/plantilla.xhtml">
+      
+	    <ui:define name="head">
+			<title>Productos</title>
+	   	</ui:define>
+		
+		<ui:define name="body">
+			<section id="gtco-our-team" data-section="our-team">
+				<div class="container">
+					<div class="row row-pb-md">
+						<div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+							<h1>Acerca de Nosotros</h1>
+							<p class="sub">Somos una empresa que brinda una mejor experiencia al momento de comprar o vender por internet.</p>
+						</div>
+					</div>
+					<div class="row team-item gtco-team-reverse">
+						<div class="col-md-6 col-md-push-7 " data-animate-effect="fadeInRight">
+							<div class="img-shadow">
+								<img src="resources/images/mision.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" />
+							</div>
+						</div>
+						<div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+							<h2>Misión y Visión</h2>
+							<p>Somos una empresa líder en el mercado, orientada a ofrecer la mejor calidad y variedad en productos y servicios de venta, brindándole a nuestros clientes las mejores opciones de compra, contando con los establecimientos que poseen el mejor ambiente comodidad y seguridad, obteniendo de esta manera su confianza y lealtad; ofreciendo a las ciudades en las que tenemos presencia un estilo único de atención y calidad de vida a sus pobladores</p>
+						</div>
+					</div>		
+				</div>
+			</section>	
+		</ui:define>
+		
+		<ui:define name="js">
+			
+			<!-- jQuery -->
+			<script src="resources/js/jquery.min.js"></script>
+			<!-- Waypoints -->
+			<script src="resources/js/jquery.waypoints.min.js"></script>
+			<!-- Stellar -->
+			<script src="resources/js/jquery.stellar.min.js"></script>
+			<!-- Main -->
+			<script src="resources/js/main.js"></script>
+	   	</ui:define>
+
+	</ui:composition>
+	
+</html>

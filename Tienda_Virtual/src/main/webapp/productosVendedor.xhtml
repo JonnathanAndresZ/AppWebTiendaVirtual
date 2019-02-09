@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:o="http://omnifaces.org/ui"
+	  xmlns:of="http://omnifaces.org/functions"
+	  xmlns:p="http://primefaces.org/ui">
+      
+    <ui:composition template="/WEB-INF/include/plantillaVendedor.xhtml">
+      
+	    <ui:define name="head">
+			<title>Productos</title>
+	   	</ui:define>
+		
+		<ui:define name="body">
+			<section id="gtco-our-team" data-section="our-team">
+				<div class="container" style="margin-top:3%; text-align: center;">
+					<div class="row">
+						<div class="panel panel-primary col-sm-12">
+							<div class="panel-heading">
+								<h3>Lista de Productos</h3>
+							</div>
+							<div class="panel-body">
+									<h:form>
+										<div class="row">
+											<div class="col-sm-2">
+												<h:commandLink
+												action="#{controladorListaVendedores.cargarUsuarios()}"
+												class="btn btn-default" >Recargar Lista</h:commandLink>	
+											</div>
+											<div class="col-sm-2">
+												<h:link
+												outcome="agregarProductoVendedor.jsf"
+												class="btn btn-primary">Agregar producto</h:link>
+											</div>
+										</div>						
+									</h:form>			
+								<br/>
+								<h:form role="form" id="formulario">						
+									<div class="table-hover table-bordered" >
+										<h:dataTable id="dta" class="table" 
+											value="#{controladorListaProductos.lProductos}"
+											var="producto">
+											<h:column>
+												<f:facet name="header">Nombre</f:facet>
+												#{producto.nombre}
+											</h:column>
+											<h:column>
+												<f:facet name="header">Foto</f:facet>
+												<p:graphicImage  height="96" width="96" value="#{producto.foto1}" />
+											</h:column>
+											<h:column>
+												<f:facet name="header">Descripción</f:facet>
+												#{producto.descripcion}
+											</h:column>
+											<h:column>
+												<f:facet name="header">Stock</f:facet>
+												#{producto.stock}
+											</h:column>
+											<h:column>
+												<f:facet name="header">Acciones</f:facet>
+												<h:commandLink
+													action="#{controladorProductos.eliminaProducto(producto.id)}"
+													value="Eliminar" class="btn btn-secondary">
+													<f:ajax execute="@this"></f:ajax>
+												</h:commandLink>
+												<h:link outcome="editarProductoVendedor.jsf" class="btn btn-secondary">
+													<f:param name="producto" value="#{producto.id}"/>
+													Editar
+												</h:link>
+											</h:column>							
+										</h:dataTable>
+									</div>
+								</h:form>
+								<br></br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>	
+		</ui:define>
+		
+		<ui:define name="js">
+			
+			<!-- jQuery -->
+			<script src="resources/js/jquery.min.js"></script>
+			<!-- Waypoints -->
+			<script src="resources/js/jquery.waypoints.min.js"></script>
+			<!-- Stellar -->
+			<script src="resources/js/jquery.stellar.min.js"></script>
+			<!-- Main -->
+			<script src="resources/js/main.js"></script>
+	   	</ui:define>
+
+	</ui:composition>
+	
+</html>

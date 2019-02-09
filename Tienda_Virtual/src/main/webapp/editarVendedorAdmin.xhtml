@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      
+    <ui:composition template="/WEB-INF/include/plantillaAdmin.xhtml">
+      
+	    <ui:define name="head">
+			<title>Editar vendedor</title>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+	   	</ui:define>
+		
+		<ui:define name="body">
+			<section id="gtco-our-team" data-section="our-team">
+				<div class="container" align="center">
+					<div>
+						<div>
+        					<div class="panel panel-default form-group text-center mb-4 mt-1">
+        						<div class="panel-heading">
+			    					<h3 class="panel-title" style="color:black">Editar vendedor</h3>
+			    				</div>
+				 				<div class="panel-body">
+				    				<h:form role="form">
+				    					<div>
+											<h:message errorStyle="color:red; display:block" for="cedula" />
+										</div>
+					    				<div class="form-group">
+					    					<h:inputText type="text" name="cedula" id="cedula" class="form-control input-sm" pt:placeholder="Cédula" value="#{controladorUsuarios.usuario.cedula}"/>			    					
+					    				</div>
+				    					<div class="row">
+				    						<div class="col-xs-6 col-sm-6 col-md-6">
+				    							<div>
+													<h:message errorStyle="color:red; display:block" for="nombre" />
+												</div>
+				    							<div class="form-group">
+				                					<h:inputText type="text" name="nombre" id="nombre" class="form-control input-sm" pt:placeholder="Nombre" value="#{controladorUsuarios.usuario.nombre}"/>
+				    							</div>
+				    						</div>
+				    						<div class="col-xs-6 col-sm-6 col-md-6">
+				    							<div>
+													<h:message errorStyle="color:red; display:block" for="apellido" />
+												</div>
+				    							<div class="form-group">
+				    								<h:inputText type="text" name="apellido" id="apellido" class="form-control input-sm" pt:placeholder="Apellido" value="#{controladorUsuarios.usuario.apellido}"/>
+				    							</div>
+				    						</div>
+				    					</div>
+										<div>
+											<h:message errorStyle="color:red; display:block" for="email" />
+										</div>
+				    					<div class="form-group">
+				    						<h:inputText type="email" name="email" id="email" class="form-control input-sm" pt:placeholder="Correo electrónico" value="#{controladorUsuarios.usuario.correo}" />
+				    					</div>
+				    					<div class="row">
+				    						<div class="col-xs-6 col-sm-6 col-md-6">
+				    							<div>
+													<h:message errorStyle="color:red; display:block" for="password" />
+												</div>
+				    							<div class="form-group">
+				    								<h:inputSecret type="password" name="password" id="password" class="form-control input-sm" pt:placeholder="Contraseña" value="#{controladorUsuarios.password1Edita}"/>
+				    							</div>
+				    						</div>
+				    						<div class="col-xs-6 col-sm-6 col-md-6">
+				    							<div>
+													<h:message errorStyle="color:red; display:block" for="password2" />
+												</div>
+				    							<div class="form-group">
+				    								<h:inputSecret type="password" name="password2" id="password2" class="form-control input-sm" pt:placeholder="Repita la contraseña" value="#{controladorUsuarios.password2Edita}"/>
+				    							</div>
+				    						</div>
+				    					</div>
+				    					<div>
+											<h:outputText id="muestraValor" value="#{controladorUsuarios.msjPassword}" style="color:red; display:block" />
+											<h:outputText id="muestraValor2" value="#{controladorUsuarios.msjEditarUsuario}" style="color:green; display:block" />
+										</div>
+				    					<h:commandLink
+											action="#{controladorUsuarios.editarUsuario()}"
+											class="btn btn-primary">
+											<i class="mdi mdi-content-save"></i>
+												Editar
+										</h:commandLink>
+				    				</h:form>
+				    				<br />
+				    				<h:form>
+										<h:link
+											outcome="vendedoresAdmin.jsf"
+											class="btn btn-danger">Volver
+										</h:link>
+				    				</h:form>
+				    			</div>
+			    			</div>
+    					</div>
+					</div>
+				</div>
+			</section>	
+		</ui:define>
+		
+		<ui:define name="js">
+			
+			<!-- jQuery -->
+			<script src="resources/js/jquery.min.js"></script>
+			<!-- Waypoints -->
+			<script src="resources/js/jquery.waypoints.min.js"></script>
+			<!-- Stellar -->
+			<script src="resources/js/jquery.stellar.min.js"></script>
+			<!-- Main -->
+			<script src="resources/js/main.js"></script>
+	   	</ui:define>
+
+	</ui:composition>
+	
+</html>
